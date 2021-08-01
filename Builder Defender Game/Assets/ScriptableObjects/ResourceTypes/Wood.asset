@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3bd567edf890545a0b340f4bde4ecc, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  newString: Wood
+  nameString: Wood

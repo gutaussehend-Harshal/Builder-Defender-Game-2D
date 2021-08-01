@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameString: Wood Harvester
   prefab: {fileID: 8000362012142516600, guid: eec5b8114828d2040b7967a267f359dc, type: 3}
+  resourceGeneratorData:
+    timerMax: 0.5
+    resourceType: {fileID: 11400000, guid: b259ab9fcc5e85d47836365a44dcd17a, type: 2}
