@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/ResourceTypeList")]
 public class ResourceTypeListSO : ScriptableObject
 {
-    public List<ResourceTypeListSO> list;
+    public List<ResourceTypeSO> list;
 }

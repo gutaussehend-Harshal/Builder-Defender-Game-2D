@@ -9,11 +9,11 @@ public class ResourceManager : MonoBehaviour
     private void Awake() 
     {
         resourcesAmountDictionary  = new Dictionary<ResourceTypeSO, int>();
-        ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeSO>(typeof(ResourceTypeListSO).Name);
+        ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
 
-        foreach (ResourceTypeSo resourceType in resourceTypeList.list) 
+        foreach (ResourceTypeSO resourceType in resourceTypeList.list) 
         {
-            resourceAmountDictionary[resourceType] = 0;
+            resourcesAmountDictionary[resourceType] = 0;
         }
 
         TestLogResourceAmountDictionary();
@@ -21,7 +21,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(keyCode.T)) 
+        if(Input.GetKeyDown(KeyCode.T)) 
         {
             ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
             AddResource(resourceTypeList.list[0], 2);
@@ -31,13 +31,13 @@ public class ResourceManager : MonoBehaviour
 
     private void TestLogResourceAmountDictionary() 
     {
-        foreach (ResourceTypeSo resourceType in resourcesAmountDictionary.Keys) 
+        foreach (ResourceTypeSO resourceType in resourcesAmountDictionary.Keys) 
         {
             Debug.Log(resourceType.nameString + ": " + resourcesAmountDictionary[resourceType]);
         }
     }
 
-    public void AddResource(ResourceTypeSo resourceType, int amount) 
+    public void AddResource(ResourceTypeSO resourceType, int amount) 
     {
         resourcesAmountDictionary[resourceType] += amount;
     }
