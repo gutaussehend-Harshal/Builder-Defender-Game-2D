@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour
 {
-    [SerializeField] private ResourceManager resourceManager;
+    // [SerializeField] private ResourceManager resourceManager;
     private BuildingTypeSO buildingType;
     private float timer;
     private float timerMax;
