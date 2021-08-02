@@ -6,9 +6,9 @@ using TMPro;
 
 public class ResourcesUI : MonoBehaviour
 {
-    // [SerializeField] private Transform resourceTemplate;
     private ResourceTypeListSO resourceTypeList;
     private Dictionary<ResourceTypeSO, Transform> resourceTypeTransformDictionary;
+
     private void Awake()
     {
         resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
@@ -22,7 +22,7 @@ public class ResourcesUI : MonoBehaviour
         foreach (ResourceTypeSO resourceType in resourceTypeList.list)
         {
             Transform resourceTransform = Instantiate(resourceTemplate, transform);
-            resourceTemplate.gameObject.SetActive(true);
+            resourceTransform.gameObject.SetActive(true);
 
             float offsetAmount = -160f;
             resourceTransform.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetAmount * index, 0);
@@ -30,6 +30,7 @@ public class ResourcesUI : MonoBehaviour
             resourceTransform.Find("image").GetComponent<Image>().sprite = resourceType.sprite;
 
             resourceTypeTransformDictionary[resourceType] = resourceTransform;
+
             index++;
         }
     }
@@ -37,15 +38,11 @@ public class ResourcesUI : MonoBehaviour
     private void Start()
     {
         ResourceManager.Instance.OnResourceAmountChanged += ResourceManager_OnResourceAmountChanged;
+
         UpdateResourceAmount();
     }
 
     private void ResourceManager_OnResourceAmountChanged(object sender, System.EventArgs e)
-    {
-        UpdateResourceAmount();
-    }
-
-    private void Update()
     {
         UpdateResourceAmount();
     }

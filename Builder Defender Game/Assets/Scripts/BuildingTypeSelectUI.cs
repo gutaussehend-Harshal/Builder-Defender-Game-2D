@@ -71,7 +71,7 @@ public class BuildingTypeSelectUI : MonoBehaviour
 
         BuildingTypeSO activeBuildingType = BuildingManager.Instance.GetActiveBuildingType();
 
-        if (arrowBtn == null)
+        if (activeBuildingType == null)
         {
             arrowBtn.Find("selected").gameObject.SetActive(true);
         }
